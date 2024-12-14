@@ -4,17 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>博客文章 - 我的博客</title>
+    <title>llzgd - 博客文章</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="images/a.jpg" type="image/jpg" />
     <link rel="stylesheet" href="css/blogs.css">
     <link rel="stylesheet" href="css/fonts.css">
     <script src="js/blogs.js"></script>
+    <link rel="stylesheet" href="css/loader.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="js/loader.js"></script>
 </head>
 
 <body>
-    <button class="theme-toggle" aria-label="切换主题">🌓</button>
+    <div class="loader-wrapper">
+        <span class="loader"><span class="loader-inner"></span></span>
+    </div>
 
     <nav>
         <ul>
@@ -40,70 +46,33 @@
                 <div class="categories">
                     <h3 class="filter-title">分类筛选：</h3>
                     <button class="category-btn active">全部</button>
-                    <button class="category-btn">技术</button>
-                    <button class="category-btn">生活</button>
-                    <button class="category-btn">随笔</button>
+                    <button class="category-btn">游戏</button>
                 </div>
 
                 <div class="tag-filter">
                     <h3 class="filter-title">标签筛选：</h3>
-                    <div class="tag-buttons">
-                        <button class="tag-btn">JavaScript</button>
-                        <button class="tag-btn">CSS</button>
-                        <button class="tag-btn">HTML</button>
-                        <button class="tag-btn">旅行</button>
-                        <button class="tag-btn">生活</button>
-                    </div>
+
+                        <button class="tag-btn">游戏</button>
+                        <button class="tag-btn">存档工具</button>
+
                 </div>
             </div>
 
             <div class="blog-grid">
-                <!-- 技术类文章 -->
-                <div class="blog-card" data-category="技术">
+                <!-- 游戏类文章 -->
+                <div class="blog-card" data-category="游戏">
                     <div class="blog-content">
-                        <h2 class="blog-title">JavaScript异步编程指南</h2>
-                        <div class="blog-meta">2023年12月25日 | 阅读时间：10分钟</div>
+                        <h2 class="blog-title">逃离后室存档工具V2.6.0</h2>
+                        <div class="blog-meta">2024-10-21|作者：流浪者糕蛋</div>
                         <p class="blog-excerpt">
-                            异步编程是JavaScript中的重要概念，本文将详细介绍Promise、async/await等内容...
+                            逃离后室存档工具V2.6.0版本已经更新！...
                         </p>
                         <div class="blog-tags">
-                            <span class="tag">JavaScript</span>
-                            <span class="tag">异步编程</span>
-                            <span class="tag">教程</span>
+                            <span class="tag">逃离后室</span>
+                            <span class="tag">游戏</span>
+                            <span class="tag">存档工具</span>
                         </div>
-                        <a href="blogs/article1.html" class="read-more">阅读全文</a>
-                    </div>
-                </div>
-
-                <!-- 生活类文章 -->
-                <div class="blog-card" data-category="生活">
-                    <div class="blog-content">
-                        <h2 class="blog-title">旅行日记：北京之行</h2>
-                        <div class="blog-meta">2023年12月20日 | 阅读时间：5分钟</div>
-                        <p class="blog-excerpt">
-                            记录一次难忘的北京旅行经历，分享旅途中的所见所闻...
-                        </p>
-                        <div class="blog-tags">
-                            <span class="tag">旅行</span>
-                            <span class="tag">生活</span>
-                        </div>
-                        <a href="blogs/article2.html" class="read-more">阅读全文</a>
-                    </div>
-                </div>
-
-                <!-- 随笔类文章 -->
-                <div class="blog-card" data-category="随笔">
-                    <div class="blog-content">
-                        <h2 class="blog-title">程序员的日常思考</h2>
-                        <div class="blog-meta">2023年12月15日 | 阅读时间：8分钟</div>
-                        <p class="blog-excerpt">
-                            作为一名程序员，日常工作中的一些感悟和思考...
-                        </p>
-                        <div class="blog-tags">
-                            <span class="tag">随笔</span>
-                            <span class="tag">程序员</span>
-                        </div>
-                        <a href="blogs/article3.html" class="read-more">阅读全文</a>
+                        <a href="blogs/ETBSGT.html" class="read-more">阅读全文</a>
                     </div>
                 </div>
             </div>
