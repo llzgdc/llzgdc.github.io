@@ -1,0 +1,304 @@
+:root[data-theme="light"] {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --text-color: #2c3e50;
+    --bg-color: rgba(249, 250, 251, 0.9);
+    --card-bg: rgba(255, 255, 255, 0.9);
+    --light-gray: #f5f6fa;
+    --border-radius: 10px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --hover-bg-color: rgba(52, 73, 94, 0.9);
+    /* 添加这行：暗色主题的背景色 */
+    --hover-text-color: #ecf0f1;
+    /* 添加这行：暗色主题的文字色 */
+}
+
+:root[data-theme="dark"] {
+    --primary-color: #ecf0f1;
+    --secondary-color: #3498db;
+    --text-color: #ecf0f1;
+    --bg-color: rgba(44, 62, 80, 0.95);
+    --card-bg: rgba(52, 73, 94, 0.9);
+    --light-gray: #34495e;
+    --border-radius: 10px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    --hover-bg-color: rgba(255, 255, 255, 0.9);
+    /* 添加这行：亮色主题的背景色 */
+    --hover-text-color: #2c3e50;
+    /* 添加这行：亮色主题的文字色 */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans SC', sans-serif;
+    line-height: 1.8;
+    color: var(--text-color);
+    background: url('../Images/Background.png') fixed center/cover;
+    min-height: 100vh;
+    transition: all 0.3s ease;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: var(--bg-color);
+    min-height: calc(100vh - 60px);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+}
+
+/* 导航栏样式 */
+nav {
+    background-color: var(--card-bg);
+    padding: 1rem;
+    box-shadow: var(--box-shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    margin-bottom: 2rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: var(--secondary-color);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+nav ul li a:hover {
+    color: var(--secondary-color);
+}
+
+/* 博客文章卡片 */
+.blog-post {
+    background-color: var(--card-bg);
+    margin-bottom: 2rem;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.blog-post.animate {
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.blog-post:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.blog-post h2 {
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.post-meta {
+    color: var(--text-color);
+    opacity: 0.7;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1.5rem;
+    background-color: var(--secondary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    /* 固定圆角大小 */
+    transition: all 0.3s ease;
+}
+
+.read-more:hover {
+    background-color: var(--hover-bg-color);
+    color: var(--hover-text-color);
+    transform: translateX(5px);
+    border-radius: 25px;
+    /* 确保悬停时保持圆角 */
+}
+
+
+/* 侧边栏样式 */
+.sidebar {
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: all 0.3s ease;
+    position: sticky;
+    top: 80px;
+    height: fit-content;
+}
+
+.sidebar h3 {
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--secondary-color);
+}
+
+.sidebar ul {
+    list-style: none;
+    margin-bottom: 1.5rem;
+}
+
+.sidebar ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+    color: var(--secondary-color);
+    padding-left: 5px;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tags a {
+    padding: 0.5rem 1rem;
+    background-color: var(--light-gray);
+    color: var(--text-color);
+    text-decoration: none;
+    border-radius: 20px;
+    /* 固定圆角大小 */
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.tags a:hover {
+    background-color: var(--hover-bg-color);
+    color: var(--hover-text-color);
+    transform: scale(1.05);
+    border-radius: 20px;
+    /* 确保悬停时保持圆角 */
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: var(--secondary-color);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    /* 保持圆形 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: all 0.3s ease;
+    box-shadow: var(--box-shadow);
+}
+
+.back-to-top:hover {
+    background-color: var(--hover-bg-color);
+    color: var(--hover-text-color);
+    transform: translateY(-3px);
+    border-radius: 50%;
+    /* 确保悬停时保持圆形 */
+}
+
+/* 动画 */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+
+    .container>div {
+        grid-template-columns: 1fr !important;
+        gap: 1rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .blog-post {
+        padding: 1.5rem;
+    }
+
+    .sidebar {
+        position: static;
+        margin-top: 2rem;
+    }
+
+    .theme-toggle {
+        top: 10px;
+        right: 10px;
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+}
