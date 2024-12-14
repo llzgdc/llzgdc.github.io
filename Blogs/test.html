@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文章标题 - 我的博客</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/Blog.css">
+    <link rel="stylesheet" href="../css/fonts.css">
+    <script src="../js/blog.js"></script>
+</head>
+
+<body>
+    <button class="theme-toggle" aria-label="切换主题">🌓</button>
+
+    <nav>
+        <ul>
+            <li><a href="../index.html">首页</a></li>
+            <li><a href="#about">关于我</a></li>
+            <li><a href="#blog">博客文章</a></li>
+            <li><a href="#contact">联系方式</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <article class="article-container">
+            <h1 class="article-title">文章标题</h1>
+            <div class="article-meta">
+                发布于 2023年12月25日 | 作者：博主
+            </div>
+
+            <div class="article-content">
+                <!-- 提示框 -->
+                <div class="tip">这是一个提示信息</div>
+                <div class="warning">这是一个警告信息</div>
+                <div class="info">这是一个信息提示</div>
+                <div class="success">这是一个成功提示</div>
+
+                <!-- 引用 -->
+                <blockquote>
+                    这是一段引用文本
+                </blockquote>
+
+                <!-- 代码块 -->
+                <div class="code-header">
+                    <span>JavaScript</span>
+                    <button class="copy-button">复制</button>
+                </div>
+                <pre><code>const greeting = "Hello World!";
+                console.log(greeting);</code></pre>
+
+                <!-- 表格 -->
+                <table>
+                    <thead>
+                        <tr>
+                            <th>标题1</th>
+                            <th>标题2</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>内容1</td>
+                            <td>内容2</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- 图片 -->
+                <figure>
+                    <img src="image.jpg" alt="图片描述" class="article-image">
+                    <figcaption class="image-caption">图片说明文字</figcaption>
+                </figure>
+
+                <!-- 键盘按键 -->
+                <p>按下 <kbd>Ctrl</kbd> + <kbd>C</kbd> 复制文本</p>
+
+                <!-- 标记文本 -->
+                <p>这是一段带有<mark>重点标记</mark>的文本</p>
+
+                <!-- 任务列表 -->
+                <ul class="task-list">
+                    <li class="task-list-item">
+                        <input type="checkbox" checked> 已完成的任务
+                    </li>
+                    <li class="task-list-item">
+                        <input type="checkbox"> 未完成的任务
+                    </li>
+                </ul>
+
+                <!-- 折叠面板 -->
+                <div class="collapsible">
+                    <div class="collapsible-header">
+                        点击展开
+                        <span class="arrow">▼</span>
+                    </div>
+                    <div class="collapsible-content">
+                        这里是折叠的内容
+                    </div>
+                </div>
+            </div>
+
+            <div class="article-tags">
+                <span>🏷️ 标签：</span>
+                <a href="#" class="tag">技术</a>
+                <a href="#" class="tag">Web开发</a>
+                <a href="#" class="tag">JavaScript</a>
+            </div>
+        </article>
+    </div>
+</body>
+
+</html>

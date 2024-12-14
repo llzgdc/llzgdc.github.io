@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的个人博客</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/fonts.css">
+</head>
+
+<body>
+    <button class="theme-toggle" aria-label="切换主题">🌓</button>
+
+    <nav>
+        <ul>
+            <li><a href="#">首页</a></li>
+            <li><a href="AboutMe.html">关于我</a></li>
+            <li><a href="blogs.html">博客文章</a></li>
+            <li><a href="contact.html">联系方式</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div style="display: grid; grid-template-columns: 7fr 3fr; gap: 2rem;">
+            <main>
+                <article class="blog-post">
+                    <h2>[标题]</h2>
+                    <p class="post-meta">[发布日期]|作者：[作者]</p>
+                    <p>[内容]</p>
+                    <div class="tags">
+                        <span class="tag-icon">🏷️标签：</span>
+                        <a href="#" class="tag">[标签1]</a>
+                        <a href="#" class="tag">[标签2]</a>
+                        <a href="#" class="tag">[标签3]</a>
+                    </div>
+                    <a href="#" class="read-more">阅读全文</a>
+                </article>
+
+                <article class="blog-post">
+                    <h2>逃离后室存档工具V2.6.0</h2>
+                    <p class="post-meta">2024-10-21|作者：流浪者糕蛋</p>
+                    <p>逃离后室存档工具V2.6.0版本已经更新！...</p>
+                    <div class="tags">
+                        <span class="tag-icon">🏷️标签：</span>
+                        <a href="#" class="tag">游戏</a>
+                        <a href="#" class="tag">逃离后室</a>
+                        <a href="#" class="tag">存档工具</a>
+                    </div>
+                    <a href="#" class="read-more">阅读全文</a>
+                </article>
+            </main>
+
+            <aside class="sidebar">
+                <h3>关于作者</h3>
+                <p>你好！我是一名热爱写作的博主...</p>
+
+                <h3>热门文章</h3>
+                <ul>
+                    <li><a href="#">最受欢迎的文章1</a></li>
+                    <li><a href="#">最受欢迎的文章2</a></li>
+                    <li><a href="#">最受欢迎的文章3</a></li>
+                </ul>
+
+                <h3>标签云</h3>
+                <div class="tags">
+                    <a href="#">生活</a>
+                    <a href="#">技术</a>
+                    <a href="#">旅行</a>
+                    <a href="#">美食</a>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <div class="back-to-top">↑</div>
+</body>
+<script>
+    // 主题切换功能
+    const themeToggle = document.querySelector('.theme-toggle');
+    const html = document.documentElement;
+
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    html.setAttribute('data-theme', savedTheme);
+
+    themeToggle.addEventListener('click', () => {
+        const currentTheme = html.getAttribute('data-theme');
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+
+        html.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+    });
+
+    // 返回顶部按钮
+    const backToTop = document.querySelector('.back-to-top');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            backToTop.style.opacity = '1';
+        } else {
+            backToTop.style.opacity = '0';
+        }
+    });
+
+    backToTop.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
+    // 博客文章动画
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
+
+    document.querySelectorAll('.blog-post').forEach(post => {
+        observer.observe(post);
+    });
+
+    // 为侧边栏添加动画
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('.sidebar > *').forEach((item, index) => {
+            item.style.animation = `slideIn 0.5s ease forwards ${index * 0.1}s`;
+        });
+    });
+</script>
+
+</html>
