@@ -38,7 +38,7 @@ body {
     font-family: 'Noto Sans SC', sans-serif;
     line-height: 1.8;
     color: var(--text-color);
-    background: url('https://github.com/llzgdc/llzgdc.github.io/blob/main/Images/Background.png?raw=true') fixed center/cover;
+    background: url('../Images/Background.png') fixed center/cover;
     min-height: 100vh;
     transition: all 0.3s ease;
 }
